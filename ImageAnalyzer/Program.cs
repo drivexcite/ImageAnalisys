@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.IO;
@@ -72,7 +72,7 @@ namespace ImageAnalyzer
         {
             var filePath = @"Images\operatingroom.jpg";
             using var imageStream = File.OpenRead(filePath);
-            var configuration = new ComputerVisionConfiguration { Key = "bab85da7a0484fb08f8ae426fe3d79f9", Endpoint = "https://westus.api.cognitive.microsoft.com" };
+            var configuration = new ComputerVisionConfiguration { Key = "", Endpoint = "https://westus.api.cognitive.microsoft.com" };
 
             var analysis = await GetImageAnalysisAsync(configuration, imageStream);
             using var connection = new SqlConnection("Server=.;Database=Content;Trusted_Connection=True;");
